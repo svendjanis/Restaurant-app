@@ -66,7 +66,7 @@ fillCuisinesHTML = (cuisines = self.cuisines) => {
         option.value = cuisine;
         select.append(option);
     });
-}
+};
 
 /**
  * Initialize leaflet map, called from HTML.
@@ -78,7 +78,7 @@ initMap = () => {
         scrollWheelZoom: false
     });
     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.jpg70?access_token={mapboxToken}', {
-        mapboxToken: 'pk.eyJ1Ijoic3ZlbmRqYW5pcyIsImEiOiJjam41cG1uYWoxMjA0M3ZydTBqbzMweXlrIn0.-7q_W4rkoZd5R3nxG-ZynA',
+        mapboxToken: 'pk.eyJ1IjoiaXNsYW1jeSIsImEiOiJjaml0N3d2cDEwbjA4M3dtdjJ5ZWRoeWsxIn0.HdHUUQb9q3SNUDXs0IZgWg',
         maxZoom: 18,
         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
             '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
@@ -87,7 +87,9 @@ initMap = () => {
     }).addTo(newMap);
 
     updateRestaurants();
-}
+};
+
+
 /* window.initMap = () => {
   let loc = {
     lat: 40.722216,
@@ -100,6 +102,7 @@ initMap = () => {
   });
   updateRestaurants();
 } */
+
 
 /**
  * Update page and map for current restaurants.
@@ -122,7 +125,7 @@ updateRestaurants = () => {
             fillRestaurantsHTML();
         }
     })
-}
+};
 
 /**
  * Clear current restaurants, their HTML and remove their map markers.
