@@ -1,8 +1,8 @@
 let restaurants,
     neighborhoods,
-    cuisines
-var newMap
-var markers = []
+    cuisines;
+var newMap;
+var markers = [];
 
 /**
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
@@ -153,7 +153,7 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
         ul.append(createRestaurantHTML(restaurant));
     });
     addMarkersToMap();
-}
+};
 
 /**
  * Create restaurant HTML.
@@ -184,7 +184,7 @@ createRestaurantHTML = (restaurant) => {
     li.append(more)
 
     return li
-}
+};
 
 /**
  * Add markers for current restaurants to the map.
@@ -200,7 +200,7 @@ addMarkersToMap = (restaurants = self.restaurants) => {
         self.markers.push(marker);
     });
 
-}
+};
 /* addMarkersToMap = (restaurants = self.restaurants) => {
   restaurants.forEach(restaurant => {
     // Add marker to the map

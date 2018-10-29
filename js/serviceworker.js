@@ -1,8 +1,13 @@
-self.addEventListener('fetch', function(event) {
-    event.respondWith(
-        caches.match(event.request).then(function(response) {
-            return response || fetch(event.request);
-        })
-    );
-});
+function initServiceWorker() {
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/sw.js').then(registration => {
+            }).catch(registrationError => {
+            });
+        });
+    }
+}
 
+window.onload = () => {
+initServiceWorker()
+};
