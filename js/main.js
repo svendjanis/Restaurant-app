@@ -162,16 +162,7 @@ createRestaurantHTML = (restaurant) => {
     const li = document.createElement('li');
 
     const image = document.createElement('img');
-    image.alt = 'Image of the restaurant: Mission Chinese Food';
-    image.alt = 'Image of the restaurant: Emily';
-    image.alt = 'Image of the restaurant: Kang ho dong baekjeong';
-    image.alt = 'Image of the restaurant: Katzs delicatessen';
-    image.alt = 'Image of the restaurant: Robertas pizza';
-    image.alt = 'Image of the restaurant: Hometown bbq';
-    image.alt = 'Image of the restaurant: Superiority burger';
-    image.alt = 'Image of the restaurant: The Dutch';
-    image.alt = 'Image of the restaurant: Mu ramen';
-    image.alt = 'Image of the restaurant: Casa enrique';
+    image.alt = 'Image of the restaurant:' + restaurant.name;
 
     image.className= 'restaurant-img';
     image.src = DBHelper.imageUrlForRestaurant(restaurant);
