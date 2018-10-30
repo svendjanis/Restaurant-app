@@ -162,14 +162,24 @@ createRestaurantHTML = (restaurant) => {
     const li = document.createElement('li');
 
     const image = document.createElement('img');
-    image.className = 'restaurant-img';
+    image.alt = 'Image of the restaurant: Mission Chinese Food';
+    image.alt = 'Image of the restaurant: Emily';
+    image.alt = 'Image of the restaurant: Kang ho dong baekjeong';
+    image.alt = 'Image of the restaurant: Katzs delicatessen';
+    image.alt = 'Image of the restaurant: Robertas pizza';
+    image.alt = 'Image of the restaurant: Hometown bbq';
+    image.alt = 'Image of the restaurant: Superiority burger';
+    image.alt = 'Image of the restaurant: The Dutch';
+    image.alt = 'Image of the restaurant: Mu ramen';
+    image.alt = 'Image of the restaurant: Casa enrique';
+
+    image.className= 'restaurant-img';
     image.src = DBHelper.imageUrlForRestaurant(restaurant);
     li.append(image);
 
-    const name = document.createElement('h1');
+    const name = document.createElement('h3');
     name.innerHTML = restaurant.name;
     li.append(name);
-
     const neighborhood = document.createElement('p');
     neighborhood.innerHTML = restaurant.neighborhood;
     li.append(neighborhood);
@@ -179,9 +189,9 @@ createRestaurantHTML = (restaurant) => {
     li.append(address);
 
     const more = document.createElement('a');
-    more.innerHTML = 'View Details';
+    more.innerHTML = 'View details of the restaurant ' + restaurant.name;
     more.href = DBHelper.urlForRestaurant(restaurant);
-    li.append(more)
+    li.append(more);
 
     return li
 };
@@ -211,4 +221,16 @@ addMarkersToMap = (restaurants = self.restaurants) => {
     self.markers.push(marker);
   });
 } */
+
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/sw.js').then(function(registration) {
+            // Registration was successful
+            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        }, function(err) {
+            // registration failed :(
+            console.log('ServiceWorker registration failed: ', err);
+        });
+    });
+}
 
